@@ -1,0 +1,163 @@
+/* 21点游戏 - 深色赌桌风格 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1a472a 0%, #0d2818 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.game-container {
+  max-width: 800px;
+  width: 90%;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #d4af37;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+h2 {
+  color: #d4af37;
+  margin-bottom: 15px;
+}
+
+.dealer-area, .player-area {
+  background: rgba(0,0,0,0.3);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #d4af37;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-height: 100px;
+  margin-bottom: 15px;
+}
+
+.card {
+  width: 70px;
+  height: 100px;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #333;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  animation: deal 0.3s ease-out;
+}
+
+@keyframes deal {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.card.red { color: #e74c3c; }
+.card.black { color: #2c3e50; }
+
+.score {
+  font-size: 1.2rem;
+  color: #d4af37;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+button {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#btn-hit {
+  background: #27ae60;
+  color: #fff;
+}
+
+#btn-stand {
+  background: #e74c3c;
+  color: #fff;
+}
+
+#btn-new {
+  background: #d4af37;
+  color: #1a472a;
+  font-weight: bold;
+}
+
+button:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.result {
+  text-align: center;
+  font-size: 1.5rem;
+  min-height: 40px;
+  margin: 20px 0;
+  color: #d4af37;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  font-size: 1.1rem;
+  padding: 15px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+.stats b {
+  color: #d4af37;
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 50px;
+    height: 75px;
+    font-size: 1.5rem;
+  }
+  
+  .controls {
+    flex-wrap: wrap;
+  }
+  
+  button {
+    padding: 10px 20px;
+  }
+}

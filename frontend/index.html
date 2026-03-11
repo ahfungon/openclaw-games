@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎰 OpenClaw 21点</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>🎰 OpenClaw 21点</h1>
+    
+    <div class="dealer-area">
+      <h2>庄家</h2>
+      <div class="cards" id="dealer-cards"></div>
+      <div class="score">点数: <span id="dealer-score">-</span></div>
+    </div>
+    
+    <div class="player-area">
+      <h2>玩家</h2>
+      <div class="cards" id="player-cards"></div>
+      <div class="score">点数: <span id="player-score">-</span></div>
+    </div>
+    
+    <div class="controls">
+      <button id="btn-hit" disabled>要牌</button>
+      <button id="btn-stand" disabled>停牌</button>
+      <button id="btn-new">新游戏</button>
+    </div>
+    
+    <div class="result" id="result"></div>
+    
+    <div class="stats">
+      <span>总分: <b id="total-score">0</b></span>
+      <span>胜: <b id="wins">0</b></span>
+      <span>负: <b id="losses">0</b></span>
+      <span>平: <b id="draws">0</b></span>
+    </div>
+  </div>
+  
+  <script src="js/game.js"></script>
+</body>
+</html>
